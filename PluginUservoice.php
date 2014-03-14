@@ -21,9 +21,9 @@ class PluginUservoice extends SnapinPlugin
           'value'       => 'UserVoice',
       ),
       'Public Description'       => array(
-          'type'        => 'hidden',
+          'type'        => 'text',
           'description' => 'Description to be seen by public',
-          'value'       => 'Get help or give us your feedback',
+          'value'       => 'Help us improve ClientExec by giving us your suggestions',
       ),
       'Public Icon'       => array(
           'type'        => 'hidden',
