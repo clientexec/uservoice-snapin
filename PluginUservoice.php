@@ -53,7 +53,7 @@ class PluginUservoice extends SnapinPlugin
   }
 
   public function view() {
-    $url = 'https://'
+    $url = (CE_Lib::isHttps()? 'https://' : 'http://')
       .$this->settings->get('plugin_uservoice_Subdomain')
       . '.uservoice.com?sso=' . $this->getUrl($this->user);
     return "<script>location.href = '$url';</script>";
