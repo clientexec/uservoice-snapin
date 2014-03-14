@@ -60,7 +60,11 @@ class PluginUservoice extends SnapinPlugin
     }
     $url = (CE_Lib::isHttps()? 'https://' : 'http://')
       .$this->settings->get('plugin_uservoice_Subdomain')
-      . ".uservoice.com$returnUrl?sso=" . $this->getUrl($this->user);
+      . ".uservoice.com$returnUrl";
+    if (!$this->user->isAnonymous()) {
+      // don't wanna have an "Anonymous"-labeled user in uservoice
+      $url .= '?sso=' . $this->getUrl($this->user);
+    }
     return "<script>location.href = '$url';</script>";
   }
 
