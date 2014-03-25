@@ -82,8 +82,8 @@ class PluginUservoice extends SnapinPlugin
       "expires" => "2031-01-12 22:56:42",
       "display_name" => $user->getFullName(),
       "email" => $user->getEmail(),
-      'owner' => $user->isSuperAdmin()? 'accept' : 'deny',
-      'admin' => $user->isAdmin()? 'accept' : 'deny',
+      'owner' => 'deny',
+      'admin' => 'deny',
       "updates" => 'true',
       "comment_updates" => 'true',
     );
