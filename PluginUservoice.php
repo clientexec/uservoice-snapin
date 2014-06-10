@@ -7,7 +7,13 @@ require_once 'modules/admin/models/SnapinPlugin.php';
 */
 class PluginUservoice extends SnapinPlugin
 {
-  var $settingsNotes = /*T*/'When enabled this gives your users the ability to sign into your UserVoice account through your ClientExec\'s instance. To use it make sure your UserVoice account supports Single Sign-On (SSO) and that it\'s propery configured under the User Authentication section in your UserVoice account.'/*/T*/;
+  var $settingsNotes;
+
+  function __construct($user, $typeOfFetch)
+  {
+      $this->settingsNotes = lang('When enabled this gives your users the ability to sign into your UserVoice account through your ClientExec\'s instance. To use it make sure your UserVoice account supports Single Sign-On (SSO) and that it\'s properly configured under the User Authentication section in your UserVoice account.');
+      parent::__construct($user, $typeOfFetch);
+  }
 
   public function getVariables() {
     $variables = array(
@@ -44,7 +50,7 @@ class PluginUservoice extends SnapinPlugin
           'type'        => 'text',
           'description' => 'Your UserVoice subdomain. For example if your UserVoice URL is http://foobar.uservoice.com, then your subdomain is foobar.'
       ),
-      /*T*/'SSO key'/*/T*/       => array(
+      lang('SSO key')       => array(
           'type'        => 'text',
           'description' => 'Your UserVoice account SSO key. You can get it from the User Authentication portion in the UserVoice General Settings'
       ),
