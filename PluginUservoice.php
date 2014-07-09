@@ -10,15 +10,15 @@ class PluginUservoice extends SnapinPlugin
 
   public function getVariables() {
     $variables = array(
-      'Public Description'       => array(
-          'type'        => 'text',
-          'description' => 'Description to be seen by public',
-          'value'       => 'Help us improve ClientExec by giving us your suggestions',
-      ),
       /*T*/'Plugin Name'/*/T*/       => array(
           'type'        => 'hidden',
           'description' => /*T*/''/*/T*/,
           'value'       => 'UserVoice SSO Integration',
+      ),
+      'Public Description'       => array(
+          'type'        => 'text',
+          'description' => 'Description to be seen by public',
+          'value'       => 'Help us improve ClientExec by giving us your suggestions',
       ),
       /*T*/'Subdomain'/*/T*/       => array(
           'type'        => 'text',
@@ -35,6 +35,7 @@ class PluginUservoice extends SnapinPlugin
   public function init()
   {
       $this->settingsNotes = lang('When enabled this gives your users the ability to sign into your UserVoice account through your ClientExec\'s instance. To use it make sure your UserVoice account supports Single Sign-On (SSO) and that it\'s properly configured under the User Authentication section in your UserVoice account.');
+
       $this->addMappingForPublicMain("view", "UserVoice", 'Integrate Clientexec with Uservoice in Public Home', 'icon-bullhorn', 'margin: 2px;');
   }
 
