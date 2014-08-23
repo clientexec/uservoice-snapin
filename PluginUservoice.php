@@ -37,6 +37,7 @@ class PluginUservoice extends SnapinPlugin
       $this->settingsNotes = lang('When enabled this gives your users the ability to sign into your UserVoice account through your ClientExec\'s instance. To use it make sure your UserVoice account supports Single Sign-On (SSO) and that it\'s properly configured under the User Authentication section in your UserVoice account.');
 
       $this->addMappingForPublicMain("view", "UserVoice", 'Integrate Clientexec with Uservoice in Public Home', 'icon-bullhorn', 'margin: 2px;');
+      $this->addMappingForTopMenu('public', '', 'view', 'UserVoice', 'Integrate Clientexec with UserVoice In Top Menu');
   }
 
   public function view() {
